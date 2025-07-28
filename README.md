@@ -56,4 +56,43 @@
 ---
 
 ## 📦 Project Structure
+fintracker/
+├── .idea/ # IDE settings (WebStorm)
+├── circuits/ # ZKP circuits written in Circom
+│ └── hashCheck.circom
+├── contracts/ # Solidity smart contracts
+│ ├── Lock.sol
+│ ├── profile.sol
+│ └── VoiceRecordABI.json
+├── ignition/ # Hardhat deployment modules
+│ └── modules/
+│ └── Lock.js
+├── node_modules/ # Dependencies
+├── public/ # Static assets
+│ ├── bg.webp
+│ └── vite.svg
+├── scripts/ # Deployment or utility scripts
+│ └── userDeploymentProfile.ts
+├── src/ # Main frontend codebase
+│ ├── assets/ # Fonts, icons, etc.
+│ └── pages/ # App pages
+│ ├── login/ # Login screen (voice input)
+│ │ ├── login.css
+│ │ └── login.tsx
+│ └── voice-input/ # Voice capture and processing
+│ ├── voice-input.css
+│ └── voice-input.tsx
+├── test/ # Smart contract tests
+├── .env # Environment variables
+├── .gitignore
+├── App.tsx # Root React component
+├── App.css
+├── index.tsx # ReactDOM entry point
+├── index.css
+├── main.tsx
+├── vite-env.d.ts
+├── vite.config.ts # Vite configuration
+├── hardhat.config.cjs # Hardhat configuration
+├── ethereum.d.ts # Type declarations
+└── index.html # Entry HTML file
 
