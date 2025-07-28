@@ -1,5 +1,5 @@
-import './App.css'
-
+import './App.css';
+import { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import PersonIcon from '@mui/icons-material/Person';
@@ -9,17 +9,31 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import HomeIcon from '@mui/icons-material/Home';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LiveHelpRoundedIcon from '@mui/icons-material/LiveHelpRounded';
-import {useState} from "react";
+import LoginComponent from "./pages/login/login.tsx";
 
 function App() {
+    const [authenticated, setAuthenticated] = useState(false);
     const [navState, setNavState] = useState(false);
-//const string = 'Good Morning'
+
     const openNav = () => {
         setNavState(prev => !prev);
     };
 
+    const handleLogin = () => {
+        setAuthenticated(true);
+    };
+
+    const handleLogout = () => {
+        setAuthenticated(false);
+        setNavState(false);
+    };
+
+    if (!authenticated) {
+        return <LoginComponent onLogin={handleLogin} />;
+    }
+
     return (
-        <>
+        <div>
             <header className="header">
                 <div><h2>FinTracker</h2></div>
                 <div className="align-center">
@@ -38,31 +52,29 @@ function App() {
                 {navState ? (
                     <div className="nav">
                         <div className="nav-item grid-two-reverse">
-                            <div className="w-100 items-center"><HomeIcon/>&nbsp;&nbsp;Home</div>
-                            <div><ChevronRightIcon/></div>
+                            <div className="w-100 items-center"><HomeIcon />&nbsp;&nbsp;Home</div>
+                            <div><ChevronRightIcon /></div>
                         </div>
                         <div className="nav-item grid-two-reverse">
-                            <div className="w-100 items-center"><PersonIcon/>&nbsp;&nbsp;Profile</div>
-                            <div><ChevronRightIcon/></div>
+                            <div className="w-100 items-center"><PersonIcon />&nbsp;&nbsp;Profile</div>
+                            <div><ChevronRightIcon /></div>
                         </div>
                         <div className="nav-item grid-two-reverse">
-                            <div className="w-100 items-center"><AccountBalanceWalletIcon/>&nbsp;&nbsp;Wallet</div>
-                            <div><ChevronRightIcon/></div>
+                            <div className="w-100 items-center"><AccountBalanceWalletIcon />&nbsp;&nbsp;Wallet</div>
+                            <div><ChevronRightIcon /></div>
                         </div>
                         <div className="nav-item grid-two-reverse">
-                            <div className="w-100 items-center"><SettingsIcon/>&nbsp;&nbsp;Settings</div>
-                            <div><ChevronRightIcon/></div>
+                            <div className="w-100 items-center"><SettingsIcon />&nbsp;&nbsp;Settings</div>
+                            <div><ChevronRightIcon /></div>
                         </div>
                         <div className="nav-item grid-two-reverse">
-                            <div className="w-100 items-center"><LiveHelpRoundedIcon/>&nbsp;&nbsp;FAQ</div>
-                            <div><ChevronRightIcon/></div>
+                            <div className="w-100 items-center"><LiveHelpRoundedIcon />&nbsp;&nbsp;FAQ</div>
+                            <div><ChevronRightIcon /></div>
                         </div>
-                        {/*<div className="nav-item grid-two-reverse bottom">*/}
-                        {/*    <div className="w-100 items-center"><LogoutIcon/>&nbsp;&nbsp;Logout</div>*/}
-                        {/*    <div><ChevronRightIcon/></div>*/}
-                        {/*</div>*/}
                         <div className="nav-item bottom w-100">
-                            <button className="w-100 align-center warn"><LogoutIcon/>&nbsp;&nbsp;Logout</button>
+                            <button className="w-100 align-center logout" onClick={handleLogout}>
+                                <LogoutIcon />&nbsp;&nbsp;Logout
+                            </button>
                         </div>
                     </div>
                 ) : (
@@ -74,13 +86,11 @@ function App() {
                             </div>
                         </div>
 
-                        <button className="w-100 margin-top">Add Item</button>
-
                         <div className="margin-top">
                             {[1, 2, 3, 4].map((_, i) => (
                                 <div className="grid-two-auto" key={i}>
                                     <div className="grid-two-reverse">
-                                        <div className="icon"></div>
+                                        {/*<div className="icon"></div>*/}
                                         <div>Item</div>
                                     </div>
                                     <div>R200.00</div>
@@ -88,14 +98,13 @@ function App() {
                             ))}
                         </div>
 
-                        <button className="w-100 margin-top">warning</button>
-                        <button className="w-100 margin-top">connect wallet</button>
+                        <button className="w-100 margin-btm bottom">Add Item</button>
+
                     </div>
                 )}
             </div>
-        </>
+        </div>
     );
 }
 
 export default App;
-

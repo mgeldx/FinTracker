@@ -1,0 +1,14 @@
+button{
+    background-color: white;
+    color: #071C2F;
+}
+
+.voice-btns{
+    display: grid;
+    gap: 1rem;
+    width: 10rem;
+}
+
+.transcript{
+    max-width: 10rem;
+}
