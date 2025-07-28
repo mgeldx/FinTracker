@@ -1,4 +1,3 @@
-# FinTracker
 # 🔐 FinTracker
 
 **FinTracker** is a privacy-first, mobile-friendly financial tracking app that uses **voice biometrics** and **Zero-Knowledge Proofs (ZKPs)** on the **BlockDAG blockchain** for secure, passwordless login. It empowers users to manage personal finances, track crypto wallets, and maintain privacy through modern decentralized technology.
