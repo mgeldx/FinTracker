@@ -96,3 +96,25 @@ fintracker/
 ├── ethereum.d.ts # Type declarations
 └── index.html # Entry HTML file
 
+
+---
+
+## 🚀 Features
+
+- ✅ **Voice Biometric Login** (client-side voice match → hash → ZKP)
+- 🔐 **Zero-Knowledge Proof Authentication** (Circom + SnarkJS)
+- 🔗 **BlockDAG Blockchain Integration** (EVM-compatible smart contracts)
+- 📊 **Modular Page Structure** (e.g., login, voice-input, dashboard, wallet)
+- 🧪 **Smart Contract Testing** with Hardhat
+- ⚡ **Vite-Powered Frontend** with React + TypeScript
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. Install dependencies
+
+```bash
+npm install
+
+
