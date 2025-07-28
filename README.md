@@ -117,4 +117,34 @@ fintracker/
 ```bash
 npm install
 
+## Set up .env
+Create a .env file in the root directory based on your development secrets:
+
+ini
+Copy
+Edit
+PRIVATE_KEY=your_wallet_private_key
+RPC_URL=https://url
+CHAIN_ID=0000
+
+## Compile ZKP circuits (optional if not using Circom CLI yet)
+bash
+Copy
+Edit
+circom circuits/hashCheck.circom --r1cs --wasm --sym
+snarkjs groth16 setup ...
+
+## Compile and deploy contracts
+bash
+Copy
+Edit
+npx hardhat compile
+npx hardhat run scripts/userDeploymentProfile.ts --network blockdag
+
+## Start the app
+bash
+Copy
+Edit
+npm run dev
+
 
