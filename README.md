@@ -116,7 +116,8 @@ fintracker/
 
 ```bash
 npm install
-
+```
+---
 ## Set up .env
 Create a .env file in the root directory based on your development secrets:
 
