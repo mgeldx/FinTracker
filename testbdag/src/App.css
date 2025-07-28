@@ -1,5 +1,11 @@
+body{
+  background: #071C2F;
+
+  font-family: 'Lexend Zetta', serif;
+}
+
 .header{
-  background-color: #1a1a1a;
+ //background-color: #0E2BBF;
   position: fixed;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -8,6 +14,8 @@
   padding:0 2rem;
   height: 5rem;
   align-items: center;
+  //border-bottom: 0.5px solid white;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
 }
 .nav{
   height: calc(100vh - 10rem);
@@ -24,7 +32,7 @@
 .main{
   height: calc(100vh - 10rem);
   width: calc(100vw - 4rem);
-  margin-top: 2rem;
+  margin-top: 5rem;
   margin-left: 2rem;
   margin-right: 2rem;
 }
@@ -52,7 +60,7 @@
   width: 100%;
 }
 .hero{
-  background-color: #1a1a1a;
+  background-color: #0E2BBF;
   border-radius: 1rem;
   width: 100%;
 }
@@ -89,6 +97,11 @@
   width: calc(100vw - 4rem);
 }
 
-.warn{
-  background-color: #f44336;
+.logout{
+  background-color: #0E2BBF;
+  color: white;
+}
+
+.margin-btm{
+  margin-bottom: 1rem;
 }
